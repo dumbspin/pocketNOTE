@@ -141,7 +141,7 @@ export default function BookmarksPage() {
                         <ArrowLeft className="w-5 h-5 text-black" />
                     </button>
                 </Link>
-                <h1 className="text-4xl text-white font-bold tracking-wide">Bookmarks</h1>
+                <h1 className="text-3xl md:text-4xl text-white font-bold tracking-wide">Bookmarks</h1>
             </div>
 
             {/* Search Bar */}
@@ -211,7 +211,7 @@ export default function BookmarksPage() {
             {/* Modal Form */}
             {showForm && (
                 <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-                    <div className="bg-[#FDF9F0] w-full max-w-sm rounded-[2rem] border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] p-6 relative animate-in fade-in zoom-in duration-200">
+                    <div className="bg-[#FDF9F0] w-[90%] md:w-full md:max-w-sm rounded-[2rem] border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] p-6 relative animate-in fade-in zoom-in duration-200">
                         <button
                             onClick={() => {
                                 setShowForm(false);

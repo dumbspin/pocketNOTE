@@ -121,7 +121,7 @@ function NotesContent() {
                     </button>
                 </Link>
                 <div>
-                    <h1 className="text-4xl text-white font-bold tracking-wide">
+                    <h1 className="text-3xl md:text-4xl text-white font-bold tracking-wide">
                         {categoryParam ? `${categoryParam} Notes` : 'All Notes'}
                     </h1>
                 </div>

@@ -155,29 +155,33 @@ export default function Calendar() {
 
             {/* Modal */}
             {showModal && (
-                <div className="absolute inset-0 z-50 bg-[#FDF9F0] p-4 rounded-[1.3rem] flex flex-col animate-in fade-in zoom-in duration-200">
-                    <div className="flex justify-between items-center mb-4">
-                        <h4 className="font-bold">Add Event</h4>
-                        <button onClick={() => setShowModal(false)}><X className="w-5 h-5" /></button>
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+                    <div className="bg-[#FDF9F0] w-full max-w-sm rounded-[2rem] border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] p-6 flex flex-col animate-in zoom-in duration-200">
+                        <div className="flex justify-between items-center mb-4">
+                            <h4 className="font-bold text-xl">Add Event</h4>
+                            <button onClick={() => setShowModal(false)} className="p-1 hover:bg-black/10 rounded-full transition-colors">
+                                <X className="w-6 h-6" />
+                            </button>
+                        </div>
+                        {selectedDate && (
+                            <p className="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wider">
+                                {selectedDate.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                            </p>
+                        )}
+                        <form onSubmit={handleAddEvent} className="flex-1 flex flex-col gap-4">
+                            <input
+                                autoFocus
+                                type="text"
+                                placeholder="Event title..."
+                                value={newEventTitle}
+                                onChange={(e) => setNewEventTitle(e.target.value)}
+                                className="w-full bg-white border-2 border-black/10 focus:border-black rounded-xl p-4 font-bold text-lg outline-none transition-all"
+                            />
+                            <button type="submit" className="w-full bg-black text-white py-4 rounded-xl font-bold shadow-lg active:scale-95 transition-transform">
+                                Save Event
+                            </button>
+                        </form>
                     </div>
-                    {selectedDate && (
-                        <p className="text-sm text-gray-500 mb-4">
-                            {selectedDate.toLocaleDateString()}
-                        </p>
-                    )}
-                    <form onSubmit={handleAddEvent} className="flex-1 flex flex-col justify-between">
-                        <input
-                            autoFocus
-                            type="text"
-                            placeholder="Event title..."
-                            value={newEventTitle}
-                            onChange={(e) => setNewEventTitle(e.target.value)}
-                            className="w-full bg-transparent border-b-2 border-black/10 focus:border-black outline-none py-2 font-bold text-lg"
-                        />
-                        <button type="submit" className="w-full bg-black text-white py-2 rounded-lg font-bold mt-4">
-                            Save
-                        </button>
-                    </form>
                 </div>
             )}
         </div>

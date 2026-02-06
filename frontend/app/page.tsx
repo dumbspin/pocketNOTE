@@ -71,7 +71,7 @@ export default function Home() {
     <div className="min-h-full pb-20 px-6 md:px-12 w-full">
       {/* Header */}
       <header className="flex justify-between items-center py-6 mb-4 text-white">
-        <h1 className="text-4xl font-bold tracking-wide">PocketNote</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-wide">PocketNote</h1>
         <div className="w-8 h-8 rounded-full bg-white/10 border-2 border-white/20"></div>
       </header>
 

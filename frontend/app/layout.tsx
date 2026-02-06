@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${fredoka.variable} antialiased min-h-screen p-4 md:p-8`}
       >
-        <div className="w-full max-w-7xl mx-auto h-full min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-4rem)] relative">
+        <div className="w-full max-w-7xl mx-auto h-full min-h-[calc(100dvh-2rem)] md:min-h-[calc(100dvh-4rem)] relative">
           {children}
         </div>
       </body>
